@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>doraemon</title>
+	<style type="text/css">
+		.doraemon {
+			position: relative;
+			margin-top: 50px;
+			margin-left: 50px;
+		}
+		.header {
+			width: 320px;
+			height: 300px;
+			background: #07bbee;
+			border-radius: 150px;
+			border: 2px #555 solid;
+			position: relative;
+		}
+		.face {
+			width: 265px;
+			height: 195px;
+			background: #fff;
+			position: absolute;
+			top: 75px;
+			left: 25px;
+			border: 2px #000 solid;
+			border-radius: 150px;
+			z-index: 3;
+		}
+		.eyes {
+			position: relative;
+			z-index: 4;
+		}
+		.eye_l , .eye_r{
+			width: 72px;
+			height: 82px;
+			position: absolute;
+			top: 40px;
+			border :2px #000 solid;
+			border-radius: 60px;
+			background: #fff;
+		}
+		.eye_l {
+			left: 82px;
+		}
+		.eye_r {
+			left: 160px;
+		}
+		.yanzhu_l,.yanzhu_r {
+			width: 14px;
+			height: 14px;
+			background: #000;
+			top: 30px;
+			position: absolute;
+			border-radius: 10px;
+		}
+		.yanzhu_l {
+			left: 50px;
+		}
+		.yanzhu_r {
+			left: 5px;
+		}
+		.nose {
+			width: 30px;
+			height: 30px;
+			border-radius: 50px;
+			background: #c93300;
+			border:2px #000 solid;
+			position: absolute;
+			left: 115px;
+			top: 40px;
+		}
+		.nose_line {
+			width: 3px;
+			height: 100px;
+			background:#000;
+			position: absolute;
+			left: 130px;
+			top: 72px;
+		}
+		.mouth {
+			width: 220px;
+			height: 400px;
+			border-radius: 120px;
+			border-bottom: 3px #000 solid;
+			position: absolute;
+			top: -231px;
+			left: 20px;
+			z-index: 3;
+		}
+		.huxus {
+			width:220px;   
+			height:80px;   
+			position:relative;   
+			border-radius:15px;   
+			top:80px;
+			left:20px;   
+			z-index:2;   
+		}
+		.huxu {
+			background:#000;   
+			width:70px;   
+			height:2px;   
+			position:absolute;   
+			z-index:2;   
+		}
+		.lt {
+			transform:rotate(20deg);   
+		}
+		.lc {
+			top:25px;
+		}
+		.lb {
+			top:50px;
+
+			transform:rotate(160deg);   
+		}
+		.rt {
+			right: 0;
+			transform:rotate(160deg);   
+		}
+		.rc {
+			right: 0;
+			top:25px;
+		}
+		.rb {
+			right: 0;
+			top:50px;
+			transform:rotate(20deg);   
+		}
+		.ling {
+			width:230px;   
+			height:20px;
+			position:relative;   
+			z-index:4;   
+			top:270px;
+			left:42px;   
+			background:#c40;   
+			border: 2px solid #000000;   
+			border-radius:10px;   
+		}
+		.bell {
+			position: absolute;
+			left: 50%;
+			width:40px;   
+			height:40px;   
+			border-radius:50px;   
+			border: 2px solid #000;   
+			background:#f9f12a; 
+			margin-left: -20px;
+			top:5px;  
+		}
+		.bell_dot {
+			height:10px;
+			width:12px;
+			border-radius:10px;  
+			background:#000;    
+			position:absolute;   
+			top:13px;   
+			left:14px;   
+		}
+		.bell_line {
+			height:18px;
+			width:3px;   
+			background: #000;
+			top:22px;   
+			left:18px;   
+			position:absolute; 
+		}
+		.body {
+			height:180px;
+			width:220px; 
+			position: relative;
+			background:#07beea;   
+			border: 2px solid #333;   
+			top:265px;   
+			left:47px;  
+		}
+		.pocket {
+			width: 170px;
+			height: 170px;
+			background:#fff;   
+			border: 2px solid #000;   
+			border-radius:85px;   
+			position:absolute;   
+			top:-40px;   
+			left:26px;  
+			z-index: 2;
+		}
+		.pocket_up {
+			width:134px;  
+			height:60px; 
+			background:#fff;   
+			border-bottom:2px solid #000;  
+			position: absolute; 
+			left: 17px;
+			top: 20px;
+			z-index: 2; 
+		}
+		.pocket_down {
+			width: 130px;
+			height: 130px;
+			border-radius:65px;   
+			background:#fff;   
+			border: 2px #000 solid;
+			position: absolute;   
+			top:20px;   
+			left:17px;   
+		}
+		.arm_l,.arm_r {
+			background:#07beea;   
+			position:absolute;   
+			height:50px;width:80px; 
+			z-index:1;    
+		}
+		.arm_r {
+			top:19px;   
+			transform:rotate(35deg);  
+			left: 198px;
+		}
+		.arm_l {
+			top:19px;   
+			transform:rotate(145deg); 
+			left: -60px;
+		}
+		.hand_l ,.hand_r{
+			height:60px;
+			width:60px;   
+			background: #fff;
+			border: 2px solid #000;   
+			border-radius:30px;  
+			position: absolute; 
+		}
+		.hand_l {
+			left: 60px;
+			top:-10px;
+
+		}
+		.hand_r {
+			right: -50px;
+			top:-5px;
+		}
+		.foot {
+			position: relative;
+			top: 180px;
+			left: -2px;
+		}
+		.foot_mid {
+			height: 20px;
+			width: 220px;
+			background: #07beea;
+			position: absolute;
+			border-left: 2px #333 solid;
+			border-right: 2px #333 solid;
+		}
+		.foot_cycle {
+			width: 20px;
+			height: 30px;
+			border-radius: 50px;
+			border:2px #333 solid;
+			background: #fff;
+			position: absolute;
+			left: 50%;
+			margin-left: -10px;
+			z-index: 2;
+		}
+		.ft {
+			width: 220px;
+			height: 30px;
+			position: absolute;
+			background: #fff;
+			top: 20px;
+			z-index: 2;
+		}
+		.foot_l,.foot_r  {
+			width:125px;  
+			height:30px;   
+			background:#fff;   
+			border: 2px solid #333;   
+			border-radius:80px 60px 60px 40px;   
+			position: absolute;
+			left:-18px; 
+			top: -5px;  
+		}
+		.foot_r {
+			left:115px; 
+			top: -5px;  
+		}
+	</style>
+</head>
+<body>	
+	<div class="doraemon">
+		<!-- 头部 -->
+		<div class="header">
+			<!-- 眼睛 -->
+			<div class="eyes">
+				<div class="eye_l"><div class="yanzhu_l"></div></div>
+				<div class="eye_r"><div class="yanzhu_r"></div></div>
+			</div>
+			<!-- 脸部 -->
+			<div class="face">
+				<div class="nose"></div>
+				<div class="nose_line"></div>
+				<div class="mouth"></div>
+				<div class="huxus">
+					<div class="huxu lt"></div>
+					<div class="huxu lc"></div>
+					<div class="huxu lb"></div>
+					<div class="huxu rt"></div>
+					<div class="huxu rc"></div>
+					<div class="huxu rb"></div>
+				</div>
+			</div>
+			<!-- 铃铛 -->
+			<div class="ling">
+				<div class="bell">
+					<div class="bell_dot"></div>
+					<div class="bell_line"></div>
+				</div>
+			</div>
+			<!-- 身体 -->
+			<div class="body">
+				<div class="arm_l"><div class="hand_l"></div></div>
+				<div class="arm_r"><div class="hand_r"></div></div>
+				<div class="pocket">
+					<div class="pocket_up"></div>
+					<div class="pocket_down"></div>
+				</div>
+				<!-- foot -->
+				<div class="foot">  
+					<div class="foot_mid"><div class="foot_cycle"></div></div>
+					<div class="ft">
+						<div class="foot_l"></div>  
+						<div class="foot_r"></div>  
+					</div>
+				</div>  
+			</div>
+		</div>
+	</div>
+</body>
+</html>
